@@ -56,22 +56,16 @@ Node* buildTree(){
     return root;
 }
 
-void inorderTraversal(Node* root, vector<int>& inorder) {
+void inorderTraversal(Node* root) {
     if (root == NULL) return;
-    inorderTraversal(root->left, inorder);
-    inorder.push_back(root->data);
-    inorderTraversal(root->right, inorder);
+    inorderTraversal(root->left);
+     cout << root->data << " ";  
+    inorderTraversal(root->right);
 }
 
 int main() {
     Node* root = buildTree();
-    vector<int> inorder;
-    inorderTraversal(root, inorder);
-    cout << "Inorder Traversal: ";
-    for (int val : inorder) {
-        cout << val << " ";
-    }
-    cout << endl;
+       inorderTraversal(root);
     return 0;
 }
 
