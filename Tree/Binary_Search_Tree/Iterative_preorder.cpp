@@ -29,7 +29,7 @@ void iterative(Node* root){
 
         if(curr->right) 
         st.push(curr->right);
-        if(curr->right)
+        if(curr->left)
         st.push(curr->left);
     }
 
